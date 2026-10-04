@@ -9,6 +9,7 @@ canonical project docs it routes to.
 
 - `repo-guidance.md` — this entry point and inventory.
 - [`tasks.md`](tasks.md) — outstanding shared reader work, grouped by component.
+- [`reader-bugs.md`](reader-bugs.md) — known reader bugs used as test targets and regression guards.
 - [`skills/`](skills/README.md) — reusable skill packages and their index.
 
 ## Objectives
@@ -42,6 +43,7 @@ canonical project docs it routes to.
   | `EPUB` | `bookPlayer` |
   | `CMX` | `comicsPlayer` |
   | `PDF` | `pdfPlayer` |
+  | `GUIDE` | Agent guidance (`AGENTS.md`, `.agents/`) |
 
 - Each active task records remaining work, priority, acceptance criteria, evidence or status,
   and dependencies.
