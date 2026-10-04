@@ -103,11 +103,12 @@ _No outstanding tasks._
 
 ## GUIDE: Agent guidance
 
-### GUIDE-1: Make AGENTS.md general to jellyfin-web
+### GUIDE-1: Make AGENTS.md general to jellyfin-web (fork only)
 
 - **Priority:** Medium
 - **Remaining work:** Rewrite the root `AGENTS.md` so it serves any work in jellyfin-web,
-  not just the book reader. Move reader-specific guidance (reader plugin routing, reference
+  not just the book reader. It stays on the fork and never goes upstream (see
+  [repo-guidance.md](repo-guidance.md#working-expectations)). Move reader-specific guidance (reader plugin routing, reference
   project licensing) into `.agents/repo-guidance.md`.
 - **Acceptance:**
   - `AGENTS.md` has no reader-specific sections and still routes to canonical docs.

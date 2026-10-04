@@ -1,8 +1,8 @@
 # Repository Agent Guidance (jellyfin-web)
 
 Repository-scoped working guidance for agents and contributors working on the book and comic
-reader. This directory ships with working branches but is removed before a pull request is
-opened. Durable, product-relevant guidance lives in [`AGENTS.md`](../AGENTS.md) and the
+reader. This directory lives only on the fork's working branches and never goes into a pull
+request. Durable, product-relevant guidance lives in [`AGENTS.md`](../AGENTS.md) and the
 canonical project docs it routes to.
 
 ## Directory contents
@@ -60,8 +60,13 @@ canonical project docs it routes to.
 - Keep each PR to a single focus. Record adjacent issues found while testing as new tasks.
 - Treat test infrastructure as production code: lint it, keep it deterministic and isolated,
   and design harnesses to be reused by later reader PRs.
-- Before opening a PR, delete `.agents/` from the PR branch and complete every section of
-  `.github/pull_request_template.md`, including Code assistance.
+- Agent files stay on the fork. Jellyfin's [LLM policy](https://jellyfin.org/docs/general/contributing/llm-policies/) forbids committing LLM
+  metafiles or other editor-created non-code files, so `AGENTS.md`, `CLAUDE.md`, `.agents/`,
+  and `.claude/` never go into an upstream pull request. Cut PR branches from
+  `upstream/master`, not from a branch carrying agent files, and bring over only code and test
+  commits. Before opening a PR, this must print nothing:
+  `git diff --name-only upstream/master...HEAD | grep -E '^(AGENTS\.md|CLAUDE\.md|\.agents/|\.claude/)'`.
+  Do not add these paths to the tracked `.gitignore`; that would itself be a change in the PR.
 - GPL and AGPL reference projects (Kavita, KOReader, Calibre-Web, Codexa) are design and
   testing references only. Do not copy their code. MIT projects (Komga, Prose Reader) still
   need license review before reuse.
